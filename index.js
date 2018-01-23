@@ -15,7 +15,7 @@ exports.getProvince = (province, callback) => {
   });
 };
 
-exports.getDistrict = (district) => {
+exports.getDistrict = (district, callback) => {
   fs.readFile(require.resolve(`./districts/${district}.json`), 'utf8', function (err, data) {
     if (err) {
       return callback(err);
