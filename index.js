@@ -1,14 +1,16 @@
 const fs = require('fs');
 const countries = require('./countries.json');
 
-exports.getCountry = countries;
+exports.getCountry = () => {
+  return countries;
+};
 
 exports.getProvince = (province, callback) => {
   fs.readFile(`./province/${province}`, 'utf8', function (err, data) {
     if (err) {
       return callback(err);
     }
-    let data = JSON.parse(data);
+    data = JSON.parse(data);
     return callback(null, data);
   });
 };
@@ -18,7 +20,7 @@ exports.getDistrict = (district) => {
     if (err) {
       return callback(err);
     }
-    let data = JSON.parse(data);
+    data = JSON.parse(data);
     return callback(null, data);
   });
 };
