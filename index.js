@@ -6,7 +6,7 @@ exports.getCountry = () => {
 };
 
 exports.getProvince = (province, callback) => {
-  fs.readFile(`./province/${province}.json`, 'utf8', function (err, data) {
+  fs.readFile(require.resolve(`./province/${province}.json`), 'utf8', function (err, data) {
     if (err) {
       return callback(err);
     }
@@ -16,7 +16,7 @@ exports.getProvince = (province, callback) => {
 };
 
 exports.getDistrict = (district) => {
-  fs.readFile(`./districts/${district}.json`, 'utf8', function (err, data) {
+  fs.readFile(require.resolve(`./districts/${district}.json`), 'utf8', function (err, data) {
     if (err) {
       return callback(err);
     }
