@@ -1,0 +1,19 @@
+{
+  "name": "nepal-geo-data",
+  "version": "1.0.0",
+  "description": "Geo Data of Nepal scrapped from http://103.69.124.141/ \r This repo contains geo data coordinates up to localbody level.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yalamber/nepal-geo-data.git"
+  },
+  "author": "OnNepal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yalamber/nepal-geo-data/issues"
+  },
+  "homepage": "https://github.com/yalamber/nepal-geo-data#readme"
+}
