@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/yalamber/nepal-geo-data#readme",
   "dependencies": {
+    "async-waterfall": "^0.1.5",
     "geojson-utils": "^1.1.0",
     "isomorphic-unfetch": "^3.0.0"
   },
