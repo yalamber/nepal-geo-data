@@ -8,7 +8,7 @@
     "scrape-provinces": "node scrapper/getProvinces.js",
     "scrape-districts": "node scrapper/getDistricts.js",
     "scrape": "run-s scrape-country scrape-provinces scrape-districts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest ./tests"
   },
   "repository": {
     "type": "git",

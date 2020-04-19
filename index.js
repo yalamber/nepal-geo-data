@@ -3,11 +3,11 @@ const gju = require('geojson-utils');
 var waterfall = require('async-waterfall');
 const nepal = require('./geo_data/nepal.json');
 
-exports.getCountry = () => {
+const getCountry = () => {
   return nepal;
 };
 
-exports.getProvince = (province, callback) => {
+const getProvince = (province, callback) => {
   fs.readFile(require.resolve(`./geo_data/province/${province}.json`), 'utf8', function (err, data) {
     if (err) {
       return callback(err);
@@ -17,7 +17,7 @@ exports.getProvince = (province, callback) => {
   });
 };
 
-exports.getDistrict = (district, callback) => {
+const getDistrict = (district, callback) => {
   fs.readFile(require.resolve(`./geo_data/districts/${district}.json`), 'utf8', function (err, data) {
     if (err) {
       return callback(err);
@@ -26,6 +26,10 @@ exports.getDistrict = (district, callback) => {
     return callback(null, data);
   });
 };
+
+exports.getCountry = getCountry;
+exports.getProvince = getProvince;
+exports.getDistrict = getDistrict;
 
 exports.geoLocate = (latitude, longitude) => {
   return new Promise((resolve, reject) => {
@@ -87,10 +91,11 @@ exports.geoLocate = (latitude, longitude) => {
       if(err) {
         reject(err);
       }
+      console.log(result.localBody)
       result = {
         province: result.province.properties.TARGET,
         district: result.district.properties.TARGET,
-        localBody: result.localBody.properties.TARGET
+        localBody: result.localBody.properties.FIRST_GaPa
       };
       resolve(result);
     });
