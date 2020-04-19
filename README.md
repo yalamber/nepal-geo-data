@@ -1,5 +1,6 @@
 # Nepal GEO Data
-This repo contains geo data coordinates of up to Local body level. GIS data included 
+This repo contains geo data coordinates of up to Local body level. GIS data included.
+With this plugin you can findout if any specific location is within any province, district up to localbody level.  
 
 # How to use
 ```javascript
